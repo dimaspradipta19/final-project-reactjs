@@ -1,11 +1,17 @@
 import React from "react";
 import CardOrder from "./CardOrder";
 
-export default function OrderBill() {
+export default function OrderBill({ cart }) {
   return (
     <div>
-      <CardOrder />
-      <CardOrder />
+      {cart.map((item) => (
+        <CardOrder
+          key={item.id}
+          title={item.title}
+          price={item.price}
+          // Add other props as needed
+        />
+      ))}
     </div>
   );
 }

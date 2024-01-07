@@ -1,26 +1,7 @@
 import React from "react";
 // import { useDispatch, useSelector } from "./CartReducer.jsx";
 
-export default function Card({ id, imgLink, price, title }) {
-  // const dispatch = useDispatch();
-  // const cart = useSelector((state) => state.cart);
-
-  // const addToCart = (item) => {
-  //   dispatch({ type: "ADD_TO_CART", payload: item });
-  // };
-
-  // const removeFromCart = (item) => {
-  //   dispatch({ type: "REMOVE_FROM_CART", payload: item });
-  // };
-
-  // const clearCart = () => {
-  //   dispatch({ type: "CLEAR_CART" });
-  // };
-
-  // const calculateTotal = () => {
-  //   return cart.reduce((total, item) => total + item.price, 0);
-  // };
-
+export default function Card({ id, imgLink, price, title, onAddToCart }) {
   return (
     <>
       <div className="card m-2" style={{ width: 200 }}>
@@ -36,7 +17,11 @@ export default function Card({ id, imgLink, price, title }) {
           <p className="card-title">{title}</p>
           <p className="card-price">{price}</p>
           <div className="row">
-            <button type="button" className="btn btn-primary ">
+            <button
+              onClick={onAddToCart}
+              type="button"
+              className="btn btn-primary "
+            >
               Add to Cart
             </button>
           </div>
