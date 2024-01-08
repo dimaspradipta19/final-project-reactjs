@@ -13,7 +13,7 @@ export default function MainContent() {
         <Catalog items={data} dispatch={dispatch} />
       </div>
       <div className="col-3">
-        <OrderBill cart={cart} />
+        <OrderBill cart={cart} dispatch={dispatch} />
       </div>
     </div>
   );
